@@ -8,5 +8,7 @@ exports.dateTo = '2021-04-30'
 exports.intervalMs = 1000
 exports.dose = 1 // 1 or 2
 exports.geoId = '1465011' // parentId https://pacjent.erejestracja.ezdrowie.gov.pl/teryt/api/woj/14/simc?namePrefix=Warszawa
+exports.voidId = '14'
 // exports.geoId = '0264011' // parentId https://pacjent.erejestracja.ezdrowie.gov.pl/teryt/api/woj/02/simc?namePrefix=Wroc%C5%82aw
+// exports.voidId = '02'
 exports.confirm = true; // just query don't book if false

@@ -35,7 +35,7 @@ function getSlots () {
       },
       geoId: settings.geoId,
       prescriptionId: settings.prescriptionId,
-      voiId: '14', // ?
+      voiId: settings.voidId,
       vaccineTypes: settings.vaccineTypes
     }
   ).then(res => res.list)
