@@ -60,15 +60,15 @@ async function main () {
 
       let confirmed = false
       for (const slot of slots) {
-        if (slot.dose === settings.dose) {
-          if (settings.confirm) {
-            const res = await confirm(slot.id)
-            console.log(res)
-            if (!res.errorId) {
-              confirmed = true
-              break
-            }
-          }
+        if (!settings.confirm || slot.dose !== settings.dose) {
+          continue
+        }
+
+        const res = await confirm(slot.id)
+        console.log(res)
+        if (!res.errorId) {
+          confirmed = true
+          break
         }
       }
       if (confirmed) {
