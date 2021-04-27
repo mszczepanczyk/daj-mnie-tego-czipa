@@ -1,6 +1,9 @@
-exports.token = ''
-exports.prescriptionId = ''
-exports.patientSID = ''
+// you can get these values by running search inside a browser and inspecting the executed request
+// https://pacjent.erejestracja.ezdrowie.gov.pl/rezerwacja-wizyty
+exports.token = '' // x-csrf-token
+exports.patientSID = '' // cookie
+exports.prescriptionId = '' // request body, won't change between sessions
+
 // exports.vaccineTypes = ["cov19.pfizer", "cov19.astra_zeneca", "cov19.johnson_and_johnson", "cov19.moderna"];
 exports.vaccineTypes = ['cov19.pfizer']
 exports.dateFrom = '2021-04-26'
