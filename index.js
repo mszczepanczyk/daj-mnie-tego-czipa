@@ -51,8 +51,20 @@ function confirm (slotId) {
 }
 
 async function main () {
+  let errorsCount = 0
   while (true) {
-    const slots = await getSlots()
+    const slots = await getSlots().catch(err => {
+      errorsCount++
+      console.error(err)
+    })
+    if (slots == undefined) {
+      if (errorsCount >= 3) {
+        break
+      } else {
+        continue
+      }
+    }
+    errorsCount = 0
     console.log(new Date(), `Found ${slots.length} slots`)
 
     if (slots.length > 0) {
